@@ -1,0 +1,151 @@
+~ what is javascript?
+    javascript is a dynamic computer programming language. it is lightweighted and most commonly used as a part of web pages, whose implementation allow client side script to interact with user and make dynamic pages. it can be easily integrated with java and html. 
+
+~ what is use of NAN function?
+    it is use to check whether the given value is number or not. it returns true if given value is true otherwise it will return false.
+
+~ what is negative infinity?
+    it is the same as the negative value of the global objects infinity property. this value bhaves slightly different than mathematical infinity. any positive value, including positive infinity, multiplied by negative infinity is negative infinity.
+    The negative infinity in javascript is a constant value which is the lowest available. thos means that no other number is lesse than this value.
+
+~ Which company developed JavaScript?
+    it was developed by Brendan Eich at Netscape.
+
+~ What are undeclared and undefined variables?
+    Undeclared variable means that the variable does not exist in the program at all.
+    eg: console.log(dog);
+    o/p: dog is not defined
+
+    undefined variable means a variavle has been declared but it does not have a value.
+    eg: const dog;
+        console.log(dog);
+    o/p: undefined
+
+~ Write the code for adding new elements dynamically?
+    <html>
+    <head>
+    <title>
+    add new element dynamically
+    </title>
+    <script type="text/javascript">
+    function addElement(){
+        var newP=document.createElement("p");
+        var textNode=document.createTextNode("This is a new text node");
+        newP.appendChild(textNode);
+        document.getElementById("root").appendChild(newP);
+    }
+    </script>
+    </head>
+    <body>
+    <p id="root"></p>
+    </body>
+    </html>
+
+~ What is the difference between ViewState and SessionState?
+    Session State contains information that is pertaining a specific session (by a particular client/browser/machine) with the server. it's a way to track what the user is doing on the site.. across multiple pages.. amid the statelessness of the web. e.g. the contents of particular user's shopping cart is session state.
+
+    View State on the other hand is information specific to perticular web page. It is stored in hidden field so that it isn't vivible to the user's illusion that the page remembbers what he did on it the last time- dont give him a clean page every time he posts back.
+
+~ What is === operator?
+    it means exactly equals too. it means that both the value does be equals or should be same and with same data type, then only it will retun true otherwise it will retrun false.
+
+
+~ How can the style/class of an element be changed?
+    document.getElementById("id_Name").style="color:voilet;border:2px solid black;text-align:center;";
+    document.getElementById("id_Name").className="Class_Name";
+
+
+~ How to read and write a file using JavaScript?
+    You cannot read or write in JS on client side(browsers). this can be done on server d=side using the fs module in Node.js. it provides sync and async functions to read and write files on the file system.
+
+    To read a file:
+
+    const fs=require('fs');
+    fs.readFile('text.txt','utf8',('err','data')=>{
+        if(err){
+            console.error(err);
+            return;
+        }
+        console.log(data);
+    });
+
+    On Terminal: node fileName.js
+    hello world
+
+    To write a file:
+
+    const content="This is how we write data in a file";
+    fs.writeFile('text.txt',content,err=>{
+        if(err){
+            console.err;
+            return;
+        }
+    })
+
+    On Terminal: node fileName.js
+
+~ What are all the looping structures in JavaScript?
+    1)For loop:
+    It iterates the elements for the fixed number of times. if number of iteration is known.
+     for(i=0;i<=5;i++){
+        document.write(i+"<br>");
+     }
+
+    2)While loop
+    it iterates the element for the infinite number of times. it should be the number of iteration is not known.
+
+    var i=11;
+    while(i<=15){
+        document.write(i+"<br>");
+        i++
+    }
+
+
+    3)Do While loop
+    It iterates the element for the infinte number of times like while loop. but code will executed onces wheather condition is true or false.
+
+    var i=11;
+    do{
+        document.write(i+"<br>");
+        i++
+    }while(i<=15);
+
+
+    4)For in loop
+    It is use the iterate the properties of objects.
+
+    const person={fname:"Harsh",lname:"Ashiyani",age:"22"};
+
+    let text="";
+    for(let x in person){
+        text+=person[x];
+    }
+
+
+~ How can you convert the string of any base to an integer in JavaScript?
+    parseInt() is the method to convert any string data to interger.
+
+
+~ What is the function of the delete operator?
+    It removes a given property from an object.
+
+
+~ What are all the types of Pop up boxes available in JavaScript?
+    Alert, confirm and Prompt
+
+
+~ What is the use of Void (0)?
+    it is used with when inserting an expression  in a web page might produce some unwanted effect.To remove this effect, "javascriot:vois(0)" is used. this expression returns undefined primitive value.
+
+
+~ How can a page be forced to load another page in JavaScript?
+    we can use window.loction property inside a script tag.
+
+
+~ What are the disadvantages of using innerHTML in JavaScript?
+    -The use of inner html is very slow.
+    -Preserves event handlers attached to any DOM elements.
+    -Conent is replaced everywhere.
+    -Appending to innerHtml is not supported.
+    -Old content replaced issues.
+    -can break the document.
